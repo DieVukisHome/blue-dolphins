@@ -74,7 +74,7 @@ nav a:hover {
 .hero-img { width: 100%; height: auto; display: block; }
 
 @media (max-width: 700px) {
-  .hero-img { height: 55vw; object-fit: cover; object-position: left center; }
+  .hero-img { height: auto; object-fit: unset; }
 }
 
 /* HOMEPAGE CATEGORIES */
