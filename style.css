@@ -227,17 +227,16 @@ nav a:hover {
 .form-group textarea {
   width: 100%;
   padding: 0.7rem 1rem;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid #ddd0be;
   border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  color: var(--white);
+  background: var(--white);
+  color: var(--text);
   font-family: 'Georgia', serif;
   font-size: 1rem;
 }
 
-.form-group select option {
-  background: var(--navy);
-  color: var(--white);
+.form-group label {
+  color: var(--navy);
 }
 
 .form-group textarea {
