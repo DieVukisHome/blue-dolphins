@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auftrag – Blue Dolphins</title>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <a href="index.html"><img src="assets/logo.png" alt="Blue Dolphins Logo" class="logo"></a>
+      <button class="menu-toggle">&#9776;</button>
+      <nav>
+        <a href="perlenketten.html">Perlenketten</a>
+        <a href="armbaender.html">Knüpfarmbänder</a>
+        <a href="sticker.html">Sticker</a>
+        <a href="lesezeichen.html">Lesezeichen</a>
+        <a href="filzfiguren.html">Filzfiguren</a>
+        <a href="auftrag.html">Auftrag</a>
+        <a href="bestellen.html">Bestellen</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="order-section">
+      <h1>Auftrag</h1>
+      <p>Wähle eine Kategorie, beschreibe deinen Wunsch — wir melden uns so schnell wie möglich!</p>
+
+      <div class="order-form">
+        <div class="form-group">
+          <label for="produkt">Kategorie</label>
+          <select id="produkt" onchange="updateLinks()">
+            <option value="Perlenketten">Perlenketten</option>
+            <option value="Knüpfarmbänder">Knüpfarmbänder</option>
+            <option value="Lesezeichen">Lesezeichen</option>
+            <option value="Filzfiguren">Filzfiguren</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wunsch">Dein Wunsch</label>
+          <textarea id="wunsch" rows="4" placeholder="z.B. Farben, Größe, Name, Anlass ..." oninput="updateLinks()"></textarea>
+        </div>
+        <div class="order-buttons">
+          <a id="btn-wa" href="#" class="btn-whatsapp">💬 Per WhatsApp senden</a>
+          <a id="btn-mail" href="#" class="btn-primary">✉️ Per E-Mail senden</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer><p>© 2026 Blue Dolphins · Handmade with 💙 by Bianca & Diana</p></footer>
+  <script src="script.js"></script>
+  <script>
+    function updateLinks() {
+      const produkt = document.getElementById('produkt').value;
+      const wunsch = document.getElementById('wunsch').value.trim();
+      let msg = 'Hallo! Ich möchte gerne einen Auftrag aufgeben:\n\nKategorie: ' + produkt;
+      if (wunsch) msg += '\n\nMein Wunsch: ' + wunsch;
+
+      document.getElementById('btn-wa').href =
+        'https://wa.me/4367761069416?text=' + encodeURIComponent(msg);
+      document.getElementById('btn-mail').href =
+        'mailto:shop.bluedolphins@gmail.com?subject=Auftrag Blue Dolphins – ' + produkt +
+        '&body=' + encodeURIComponent(msg);
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const produkt = params.get('produkt');
+      if (produkt) document.getElementById('produkt').value = produkt;
+      updateLinks();
+    });
+  </script>
+</body>
+</html>

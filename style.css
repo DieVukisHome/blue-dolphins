@@ -204,6 +204,47 @@ nav a:hover {
 
 .btn-order:hover { background: var(--gold); }
 
+/* ORDER FORM */
+.order-form {
+  max-width: 500px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+}
+
+.form-group select option {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
 /* ORDER / BESTELLEN PAGE */
 .order-section {
   background: var(--navy);
