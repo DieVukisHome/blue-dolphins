@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perlenketten – Blue Dolphins</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <title>Perlenketten - Blue Dolphins</title>
+  <meta name="description" content="Handgemachte Perlenketten von Blue Dolphins, einem kleinen Hobbyprojekt von Bianca und Diana.">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <header>
     <div class="header-top">
       <a href="index.html"><img src="assets/logo.png" alt="Blue Dolphins Logo" class="logo"></a>
-      <button class="menu-toggle">&#9776;</button>
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <nav>
-        <a href="perlenketten.html">Perlenketten</a>
+        <a class="active" href="perlenketten.html">Perlenketten</a>
         <a href="armbaender.html">Knüpfarmbänder</a>
         <a href="sticker.html">Sticker</a>
         <a href="lesezeichen.html">Lesezeichen</a>
@@ -23,20 +26,45 @@
     </div>
   </header>
   <main>
-    <div class="page-content">
-      <h1>Perlenketten</h1>
-      <div class="products">
-        <div class="product-card">
-          <div class="photo-placeholder">📷</div>
-          <h3>Perlenkette Blau</h3>
-          <p>Handgefädelt mit bunten Glasperlen.</p>
-          <span class="price">€ 8,00</span>
-          <a href="bestellen.html?produkt=Perlenketten" class="btn-order">Bestellen</a>
-        </div>
+    <section class="category-hero" style="--hero-image: url('assets/hero-perlenketten.png');">
+      <div class="hero-copy">
+        <p class="eyebrow">Glitzer, Perlen und Lieblingsfarben</p>
+        <h1>Perlenketten</h1>
+        <p class="lead">Kleine Ketten aus bunten Perlen, liebevoll zusammengestellt von Bianca & Diana.</p>
       </div>
-    </div>
+    </section>
+    <section class="notice">
+      <strong>Familien-Hobbyprojekt</strong>
+      <p>Diese Seite ist ein kleines Projekt von Bianca & Diana. Die Stücke entstehen nach Lust, Zeit und Material und sind vorerst nur für Familie und Freunde gedacht.</p>
+    </section>
+    <section class="products-section">
+      <div class="section-heading">
+        <p class="eyebrow">Aktuelle kleine Schätze</p>
+        <h2>Perlenketten anfragen</h2>
+      </div>
+      <div class="product-grid">
+        <article class="product-card" data-product="Perlenkette Blau" data-price="8,00">
+          <div class="product-image-wrap">
+            <div class="product-placeholder"><div class="placeholder-inner"><span class="placeholder-symbol">✦</span><span class="placeholder-text">Foto folgt</span></div></div>
+            <span class="tag">Handgemacht</span>
+          </div>
+          <div class="product-content">
+            <h3>Perlenkette Blau</h3>
+            <p>Handgefädelt mit bunten Glasperlen und viel Geduld.</p>
+            <div class="product-bottom">
+              <span class="price">EUR 8,00</span>
+              <div class="order-actions"><a class="btn btn-wa" href="#" data-channel="whatsapp">WhatsApp</a><a class="btn btn-mail" href="#" data-channel="email">E-Mail</a></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="custom-box">
+      <div><p class="eyebrow">Wunschkette</p><h2>Andere Farben im Kopf?</h2><p>Für Lieblingsfarben, Namen oder besondere Wünsche gibt es die Auftrag-Seite.</p></div>
+      <a class="btn btn-custom" href="auftrag.html?produkt=Perlenketten">Wunschkette anfragen</a>
+    </section>
   </main>
-  <footer><p>© 2026 Blue Dolphins · Handmade with 💙 by Bianca & Diana</p></footer>
+  <footer><p>© 2026 Blue Dolphins · Hobbyprojekt von Bianca & Diana</p></footer>
   <script src="script.js"></script>
 </body>
 </html>

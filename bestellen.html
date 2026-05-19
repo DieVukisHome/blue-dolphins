@@ -3,52 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bestellen – Blue Dolphins</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <title>Bestellen - Blue Dolphins</title>
+  <meta name="description" content="Bestellung bei Blue Dolphins per WhatsApp oder E-Mail anfragen.">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
-  <header>
-    <div class="header-top">
-      <a href="index.html"><img src="assets/logo.png" alt="Blue Dolphins Logo" class="logo"></a>
-      <button class="menu-toggle">&#9776;</button>
-      <nav>
-        <a href="perlenketten.html">Perlenketten</a>
-        <a href="armbaender.html">Knüpfarmbänder</a>
-        <a href="sticker.html">Sticker</a>
-        <a href="lesezeichen.html">Lesezeichen</a>
-        <a href="filzfiguren.html">Filzfiguren</a>
-        <a href="auftrag.html">Auftrag</a>
-        <a href="bestellen.html">Bestellen</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <div class="order-section">
-      <h1>Bestellen</h1>
-      <p>Schreib uns einfach — wir melden uns mit allen Details zur Überweisung.</p>
-      <div class="order-buttons">
-        <a id="btn-mail" href="#" class="btn-primary">✉️ Per E-Mail bestellen</a>
-        <a id="btn-wa" href="#" class="btn-whatsapp">💬 Per WhatsApp bestellen</a>
-      </div>
-      <p class="payment-info">💳 Zahlung per Überweisung nach Bestellbestätigung.</p>
-    </div>
-  </main>
-  <footer><p>© 2026 Blue Dolphins · Handmade with 💙 by Bianca & Diana</p></footer>
+  <header><div class="header-top"><a href="index.html"><img src="assets/logo.png" alt="Blue Dolphins Logo" class="logo"></a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button><nav><a href="perlenketten.html">Perlenketten</a><a href="armbaender.html">Knüpfarmbänder</a><a href="sticker.html">Sticker</a><a href="lesezeichen.html">Lesezeichen</a><a href="filzfiguren.html">Filzfiguren</a><a href="auftrag.html">Auftrag</a><a class="active" href="bestellen.html">Bestellen</a></nav></div></header>
+  <main><section class="content-card"><p class="eyebrow">Bestellen</p><h1>Ein Stück anfragen</h1><p>Schreib uns einfach per WhatsApp oder E-Mail. Wenn du von einer Produktkarte kommst, ist das ausgewählte Stück schon in der Nachricht vorbereitet.</p><div class="order-buttons"><a id="btn-wa" href="#" class="btn btn-whatsapp">Per WhatsApp bestellen</a><a id="btn-mail" href="#" class="btn btn-primary">Per E-Mail bestellen</a></div><p class="payment-info">Zahlung per Überweisung nach Bestellbestätigung.</p></section></main>
+  <footer><p>© 2026 Blue Dolphins · Hobbyprojekt von Bianca & Diana</p></footer>
   <script src="script.js"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      const params = new URLSearchParams(window.location.search);
-      const produkt = params.get('produkt');
-      const msg = produkt
-        ? 'Hallo, ich möchte gerne bestellen:\n\n' + produkt
-        : 'Hallo, ich möchte gerne bestellen:';
-      const subject = produkt ? 'Bestellung Blue Dolphins – ' + produkt : 'Bestellung Blue Dolphins';
-      document.getElementById('btn-wa').href =
-        'https://wa.me/4367761069416?text=' + encodeURIComponent(msg);
-      document.getElementById('btn-mail').href =
-        'mailto:shop.bluedolphins@gmail.com?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(msg);
-    });
-  </script>
 </body>
 </html>
