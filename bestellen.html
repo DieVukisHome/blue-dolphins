@@ -27,13 +27,28 @@
       <h1>Bestellen</h1>
       <p>Schreib uns einfach — wir melden uns mit allen Details zur Überweisung.</p>
       <div class="order-buttons">
-        <a href="mailto:shop.bluedolphins@gmail.com?subject=Bestellung Blue Dolphins" class="btn-primary">✉️ Per E-Mail bestellen</a>
-        <a href="https://wa.me/4367761069416?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20bestellen%3A" class="btn-whatsapp">💬 Per WhatsApp bestellen</a>
+        <a id="btn-mail" href="#" class="btn-primary">✉️ Per E-Mail bestellen</a>
+        <a id="btn-wa" href="#" class="btn-whatsapp">💬 Per WhatsApp bestellen</a>
       </div>
       <p class="payment-info">💳 Zahlung per Überweisung nach Bestellbestätigung.</p>
     </div>
   </main>
   <footer><p>© 2026 Blue Dolphins · Handmade with 💙 by Bianca & Diana</p></footer>
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const produkt = params.get('produkt');
+      const msg = produkt
+        ? 'Hallo, ich möchte gerne bestellen:\n\n' + produkt
+        : 'Hallo, ich möchte gerne bestellen:';
+      const subject = produkt ? 'Bestellung Blue Dolphins – ' + produkt : 'Bestellung Blue Dolphins';
+      document.getElementById('btn-wa').href =
+        'https://wa.me/4367761069416?text=' + encodeURIComponent(msg);
+      document.getElementById('btn-mail').href =
+        'mailto:shop.bluedolphins@gmail.com?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(msg);
+    });
+  </script>
 </body>
 </html>
